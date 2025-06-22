@@ -10,9 +10,9 @@ import EditPost from './EditPost'
 
 function App() {
     return (
-        <>
+        <div className="container">
             <Router>
-                <ul>
+                <ul  className="nav-links">
                     <li>
                         <Link to="/">Home</Link>
                     </li>
@@ -26,7 +26,7 @@ function App() {
                     <Route exact path="/edit-post" element = {<EditPost />} />
                 </Routes>
             </Router>
-        </>
+        </div>
     )
 }
 

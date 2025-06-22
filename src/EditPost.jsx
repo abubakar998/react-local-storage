@@ -17,13 +17,11 @@ const EditPost = () => {
 
     const editPost = (e) => {
         e.preventDefault()
-        console.log("Baal")
         let posts = JSON.parse(localStorage.getItem("posts"));
 
         let foundIndex = posts.findIndex(x => x.id == formData.id);
         posts[foundIndex] = formData;
         
-        console.log("Baal")
         localStorage.setItem("posts", JSON.stringify(posts));
         navigate("/");
     }

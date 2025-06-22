@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const posts = JSON.parse(localStorage.getItem("posts"));
+    console.log('p', posts);
     const navigate = useNavigate();
 
     const editPost = (e, post) => {
@@ -23,8 +24,8 @@ const Home = () => {
             {
                 posts && posts.map(post =>
                     <div className="my-2" key={post.id}>
-                        <h2> Title: {post.title} </h2>
                         <h4> Id: {post.id} </h4>
+                        <h2> Title: {post.title} </h2>
                         <p> Content: {post.content} </p>
                         <button className="mt-2" onClick={(e) => editPost(e, post)}> Edit Post </button>
                         <button className="mt-2" onClick={(e) => deletePost(e, post.id)}> Delete Post </button>
